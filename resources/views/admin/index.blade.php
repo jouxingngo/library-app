@@ -2,6 +2,7 @@
 @section('title')
 Admin - DashBoard
 @endsection
+@section('nav-active', 'admin')
 @section('head')
 Welcome Admin
 @endsection

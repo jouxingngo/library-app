@@ -19,6 +19,8 @@ return new class extends Migration
             $table->boolean('status')->default(true);
             $table->string('image')->nullable();
             $table->text('description');
+            $table->integer('stock')->default(0);
+            $table->integer('stock')->unsigned();
             $table->timestamps();
         });
     }
