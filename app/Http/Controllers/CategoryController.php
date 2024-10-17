@@ -58,10 +58,10 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $category = Category::find($id);
-        $books = $category->books;
+        $category = Category::with('books')->findOrFail($id);
+        
     
-        return view('user.category.show', compact('category', 'books'));
+        return view('user.category.show', compact('category'));
     }
 
     /**
@@ -78,7 +78,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
 
         $request->validate([
             'name' => "required",
@@ -90,11 +90,11 @@ class CategoryController extends Controller
             File::delete($path.$category->image);
             $filename = time() . '.' . $request->image->extension();
             $request->image->move(public_path('images-category'), $filename);
-
+            $category->image = $filename;
+            
             $category->save();
             
         }
-        $category->image = $filename;
         $category->name = $request->name;
         $category->save();
 
@@ -107,7 +107,7 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
 
         if ($category->books()->count() > 0) {
             return redirect()->back()->with('error', 'Category cannot be deleted because it has associated books.');

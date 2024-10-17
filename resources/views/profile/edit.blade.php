@@ -10,8 +10,10 @@ Profile
 
 
     @section('content')
+
     <div class="py-1">
         <div class="container">
+            <a href="/" class="btn mb-3 btn-primary"> Back</a>
             <div class="row">
                 <div class="col-lg-12 mx-auto">
                     <div class="card mb-4">

@@ -12,7 +12,7 @@
 <h3>Book in : {{ $category->name }}</h3>
 
 <div class="row">
-    @forelse ($books as $book)
+    @forelse ($category->books as $book)
         <div class="col-md-3 mb-3">
             <div class="card">
                 <img src="{{ asset('/images/' . $book->image) }}"" class="card-img-top" alt="{{ $book->title }}">

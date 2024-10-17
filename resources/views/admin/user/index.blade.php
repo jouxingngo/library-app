@@ -4,7 +4,7 @@ Admin - DashBoard
 @endsection
 @section('nav-active', 'table')
 @section('head')
-Books Table
+Users Table
 @endsection
 
 @push('style')
@@ -20,41 +20,42 @@ Books Table
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 <script>
   $(document).ready(function () {
-    $("#books").DataTable();
+    $("#users").DataTable();
   });
 </script>
 @endpush
 
 @section('content')
-<a href="book/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Book</a>
-<table id="books" class="table table-bordered">
+<a href="user/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add User</a>
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+<table id="users" class="table table-bordered">
     <thead>                  
       <tr>
         <th style="width: 10px">No</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th>Image</th>
-        <th>Stock</th>
+        <th>Name</th>
+        <th>Email</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-        @forelse ($books as $book)
+        @forelse ($users as $user)
       <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ $book->title }}</td>
-        <td>{{ $book->category->name }}</td>
-        <td>{{ $book->status ? "Available" : "Unavailable"}}</td>
-        <td><img src="{{ asset('/images/'.$book->image) }}" width="100" alt="{{ $book->title }}"></td>
-        <td>{{ $book->stock }}</td>
+        <td>{{ $user->name }}</td>
+        <td>{{ $user->email }}</td>
+        
         <td>
-            <form action="/book/{{ $book->id }}" method="POST">
-                <a href="/book/{{ $book->id }}" class="btn btn-info btn-sm">Detail</a>
-                <a href="/book/{{ $book->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+            <form action="/user/{{ $user->id }}" method="POST">
+                <a href="/user/{{ $user->id }}" class="btn btn-info btn-sm">Detail</a>
+                <a href="/user/{{ $user->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                 @csrf
                 @method("DELETE")
-                <button onclick="return confirm('Delete Book {{ $book->title }}?');" type="submit" class="btn btn-danger btn-sm">Delete</button>
+                <button onclick="return confirm('Delete User {{ $user->name }}?');" type="submit" class="btn btn-danger btn-sm">Delete</button>
             </form>
         </td>
       </tr>

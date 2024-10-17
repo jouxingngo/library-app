@@ -79,7 +79,7 @@
                 name="phone" 
                 type="text" 
                 class="form-control" 
-                value="{{$detailProfile->phone ?? ''}}" 
+                value="{{$detailProfile->phone ?? $user->profile->phone}}" 
                 required 
                 autofocus 
             />
@@ -97,7 +97,7 @@
                 name="age" 
                 type="text" 
                 class="form-control" 
-                value="{{$detailProfile->age ?? ' '}}" 
+                value="{{$detailProfile->age ?? $user->profile->age}}" 
                 required 
                 autofocus 
             />
@@ -115,7 +115,7 @@
                 name="address" 
                 type="text" 
                 class="form-control" 
-                value="{{$detailProfile->address ?? ' '}}" 
+                value="{{$detailProfile->address ?? $user->profile->address}}" 
                 required 
                 autofocus 
             />

@@ -54,8 +54,9 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tables Data:</h6>
-                    <a class="collapse-item {{ request()->is('books') ? 'active' : '' }}" href="/book">Books</a>
+                    <a class="collapse-item" href="/book">Books</a>
                     <a class="collapse-item" href="/category">Categories</a>
+                    <a class="collapse-item" href="/user">Users</a>
                 </div>
             </div>
         </li>

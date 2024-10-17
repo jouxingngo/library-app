@@ -33,9 +33,9 @@ class BookController extends Controller
     
         // Memeriksa otentikasi pengguna
         if (auth()->check() && auth()->user()->hasRole('admin')) {
-            return view('admin.book.index', compact('books', 'search')); // Kirim data buku dan pencarian ke tampilan admin
+            return view('admin.book.index', compact('books', 'search')); 
         } else {
-            return view('user.book.index', compact('books', 'search')); // Kirim data buku dan pencarian ke tampilan user
+            return view('user.book.index', compact('books', 'search')); 
         }
     }
     
@@ -86,7 +86,8 @@ class BookController extends Controller
      */
     public function show(string $id)
     {
-        $book = Book::find($id);
+        $book = Book::findorFail($id);
+   
         return view('user.book.show', compact('book'));
     }
 
@@ -95,7 +96,7 @@ class BookController extends Controller
      */
     public function edit(string $id)
     {
-        $book = Book::find($id);
+        $book = Book::findOrFail($id);
         $categories = Category::get();
         return view("admin.book.edit", compact('book', 'categories'));
     }
@@ -114,7 +115,7 @@ class BookController extends Controller
             "stock" => "required|integer|min:0"
         ]);
 
-        $book = Book::find($id);
+        $book = Book::findOrFail($id);
         if($request->has("image"))
         {
             $path = "images/";
@@ -143,7 +144,7 @@ class BookController extends Controller
      */
     public function destroy(string $id)
     {
-        $book = Book::find($id);
+        $book = Book::findOrFail($id);
 
         $path = "images/";
         File::delete($path . $book->image);

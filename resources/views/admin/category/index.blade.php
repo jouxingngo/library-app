@@ -24,7 +24,7 @@ Admin - DashBoard
 @endpush
 
 @section('head')
-Book Tables
+Categories Table
 @endsection
 @section('content')
 <a href="category/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Category</a>
