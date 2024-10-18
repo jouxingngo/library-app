@@ -26,7 +26,7 @@ Users Table
 @endpush
 
 @section('content')
-<a href="user/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add User</a>
+<a href="{{ route('user.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add User</a>
 @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -50,9 +50,9 @@ Users Table
         <td>{{ $user->email }}</td>
         
         <td>
-            <form action="/user/{{ $user->id }}" method="POST">
-                <a href="/user/{{ $user->id }}" class="btn btn-info btn-sm">Detail</a>
-                <a href="/user/{{ $user->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+            <form action="{{ route('user.destroy',$user->id) }}" method="POST">
+                <a href="{{ route('user.show',$user->id) }}" class="btn btn-info btn-sm">Detail</a>
+                <a href="{{ route('user.edit',$user->id) }}" class="btn btn-warning btn-sm">Edit</a>
                 @csrf
                 @method("DELETE")
                 <button onclick="return confirm('Delete User {{ $user->name }}?');" type="submit" class="btn btn-danger btn-sm">Delete</button>

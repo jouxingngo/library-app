@@ -8,7 +8,7 @@ Book
 @endsection
 @section("content")
 
-    <form action="/book" method="POST" class="mb-5" enctype="multipart/form-data">
+    <form action="{{ route('book.store') }}" method="POST" class="mb-5" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             @error('title')
@@ -36,7 +36,7 @@ Book
             @forelse ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @empty
-                <option disabled>Category is empty</option>
+                <option disabled>Categories is empty</option>
             @endforelse
         </select>
         
@@ -67,7 +67,7 @@ Book
         </div>
 
         <div class="d-flex justify-content-between">
-            <a href="/book" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="{{ route('book.index') }}" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-plus"></i></button>
         </div>
     </form>

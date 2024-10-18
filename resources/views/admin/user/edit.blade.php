@@ -17,7 +17,7 @@ Profile - {{ $user->name }}
         </ul>
     </div>
 @endif
-    <form action="/user/{{ $user->id }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method("Put")
         <div class="form-group">
@@ -48,7 +48,7 @@ Profile - {{ $user->name }}
     
         
         <div class="d-flex justify-content-between mb-4">
-            <a href="/category" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="{{ route('user.index') }}" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-plus"></i></button>
         </div>
     </form>

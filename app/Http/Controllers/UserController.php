@@ -55,7 +55,7 @@ class UserController extends Controller
             'user_id' => $user->id
         ]);
 
-        return redirect("user");
+        return redirect()->route("user.index")->with('success', 'User Added');
     }
 
     /**
@@ -104,7 +104,7 @@ class UserController extends Controller
         $profile->address = $request->input("address");
         $profile->save();
 
-        return redirect("/user");
+        return redirect()->route("user.index")->with('success', 'User Updated');
 
     }
     
@@ -117,6 +117,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect("/user");
+        return redirect()->route("user.index")->with('success', 'User Deleted');
     }
 }

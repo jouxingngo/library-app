@@ -27,7 +27,7 @@ Admin - DashBoard
 Categories Table
 @endsection
 @section('content')
-<a href="category/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Category</a>
+<a href="{{ route('category.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Category</a>
 <table id="categories" class="table table-bordered">
     <thead>                  
       <tr>
@@ -56,9 +56,9 @@ Categories Table
         <td><img src="{{ asset('/images-category/'.$category->image) }}" width="100" alt=""></td>
         
         <td>
-            <form action="/category/{{ $category->id }}" method="POST">
-                <a href="/category/{{ $category->id }}" class="btn btn-info btn-sm">Detail</a>
-                <a href="/category/{{ $category->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+            <form action="{{ route('category.destroy',$category->id) }}" method="POST">
+                <a href="{{ route('category.show', $category->id) }}" class="btn btn-info btn-sm">Detail</a>
+                <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning btn-sm">Edit</a>
                 @csrf
                 @method("DELETE")
                 <button onclick="return confirm('Delete Category {{ $category->name }}?');" type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -67,7 +67,9 @@ Categories Table
        
       </tr>
       @empty
-            <h3>Category is Empty</h3>
+      <tr>
+        <td colspan="5" class="text-center">No Categories available</td>
+    </tr>
       @endforelse
      
     </tbody>

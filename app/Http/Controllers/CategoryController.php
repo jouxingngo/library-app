@@ -20,7 +20,7 @@ class CategoryController extends Controller
     
     public function index()
     {
-        $categories = Category::with('books')->get();
+        $categories = Category::with('books')->paginate(10);
         if (auth()->check() && auth()->user()->hasRole('admin')) {
             return view('admin.category.index', compact('categories')); 
         } else  {
@@ -50,7 +50,7 @@ class CategoryController extends Controller
         $category->image = $filename;
         $category->save();
 
-        return redirect('category');
+        return redirect()->route('category.index')->with('success', 'Category Added');
     }
 
     /**
@@ -98,7 +98,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        return redirect("category");
+        return redirect()->route("category.index")->with('success', 'Category Updated');
 
     }
 
@@ -119,7 +119,7 @@ class CategoryController extends Controller
         $path = "images-category/";
         File::delete($path . $category->image);
         $category->delete();
-        return redirect("/category");
+        return redirect()->route("category.index")->with('success', 'Category Deleted');
         
     }
 }

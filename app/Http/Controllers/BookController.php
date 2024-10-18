@@ -77,7 +77,7 @@ class BookController extends Controller
         $book->status = $book->stock > 0;
 
         $book->save();
-        return redirect("book");
+        return redirect()->route("book.index")->with('success','Book Added');
 
     }
 
@@ -123,11 +123,11 @@ class BookController extends Controller
             $filename = time() . '.' . $request->image->extension();
             $request->image->move(public_path('images'), $filename);
 
+            $book->image = $filename;
             $book->save();
 
             
         }
-        $book->image = $filename;
         $book->title = $request->input("title");
         $book->author = $request->input("author");
         $book->category_id = $request->input("category_id");
@@ -135,7 +135,7 @@ class BookController extends Controller
         $book->stock = $request->input("stock");
         $book->save();
 
-        return redirect("book");
+        return redirect()->route("book.index")->with('success', 'Book Updated');
 
     }
 
@@ -152,6 +152,6 @@ class BookController extends Controller
         
         $book->delete();
         
-        return redirect('/book');
+        return redirect()->route('book.index')->with('success', 'Book Deleted');
     }
 }

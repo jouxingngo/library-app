@@ -8,7 +8,7 @@ Book
 @endsection
 @section("content")
 
-    <form action="/book/{{ $book->id }}" method="POST" class="mb-5" enctype="multipart/form-data">
+    <form action="{{ route('book.update',$book->id) }}" method="POST" class="mb-5" enctype="multipart/form-data">
         @csrf
         @method("PUT")
         <div class="form-group">
@@ -68,7 +68,7 @@ Book
         </div>
 
         <div class="d-flex justify-content-between">
-            <a href="/book" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="{{ route('book.index') }}" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-plus"></i></button>
         </div>
     </form>

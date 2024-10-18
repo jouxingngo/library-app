@@ -39,6 +39,13 @@
                     <i class="fas fa-fw fa-tags"></i>
                     <span>Categories</span></a>
             </li>
+
+                <!-- Nav Item - Tables -->
+                <li class="nav-item {{ 'loan' === trim($__env->yieldContent('nav-active')) ? 'active' : '' }}">
+                    <a class="nav-link " href="{{ route('loan.index') }}">
+                        <i class="fas fa-fw fa-clipboard-check"></i>
+                        <span>My Loans</span></a>
+                </li>
         @endif
        
 
@@ -54,9 +61,10 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tables Data:</h6>
-                    <a class="collapse-item" href="/book">Books</a>
-                    <a class="collapse-item" href="/category">Categories</a>
-                    <a class="collapse-item" href="/user">Users</a>
+                    <a class="collapse-item" href="{{ route('book.index') }}">Books</a>
+                    <a class="collapse-item" href="{{ route('category.index') }}">Categories</a>
+                    <a class="collapse-item" href="{{ route('user.index') }}">Users</a>
+                    <a class="collapse-item" href="{{ route('loan.index') }}">Loans</a>
                 </div>
             </div>
         </li>

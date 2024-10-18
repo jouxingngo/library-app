@@ -9,7 +9,7 @@ User Detail
 
 
 @section('content')
-<a href="/user" class="btn mb-3 btn-primary"> Back to Users</a>
+<a href="{{ route('user.index') }}" class="btn mb-3 btn-primary"> Back to Users</a>
 <table id="users" class="table table-bordered">
     <thead>                  
       <tr>

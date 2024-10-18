@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,11 +36,16 @@ Route::middleware(['role:admin', 'auth'])->group(function () {
         return view("admin.index");
     });
     Route::resource('user', UserController::class);
+    Route::post('/loan/{loan}/return', [LoanController::class, 'return'])->name('loan.return');
 });
+Route::resource('loan', LoanController::class);
 Route::resource('book', BookController::class);
-Route::get('/books', [BookController::class, 'index'])->name('books.index');
 Route::resource('category', CategoryController::class);
-
+// route for search
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
+Route::get('/loan_null', function () {
+    return view('user.loan.null');
+});
 
 
 require __DIR__.'/auth.php';

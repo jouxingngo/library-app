@@ -6,8 +6,6 @@ Book
 
 @section('nav-active', 'book')
 
-
-
 @section('head')
 All Books
 @endsection

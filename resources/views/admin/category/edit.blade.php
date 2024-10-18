@@ -17,7 +17,7 @@ Category
         </ul>
     </div>
 @endif
-    <form action="/category/{{ $category->id }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method("Put")
         <div class="form-group">
@@ -34,7 +34,7 @@ Category
         </div>
         
         <div class="d-flex justify-content-between">
-            <a href="/category" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="{{ route('category.index') }}" class="btn btn-danger "><i class="fas fa-arrow-left"></i> Back</a>
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-plus"></i></button>
         </div>
     </form>

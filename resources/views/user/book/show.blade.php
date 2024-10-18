@@ -7,11 +7,11 @@ Book Detail
 Book Detail
 @endsection
 @section('content')
-<a href="/book" class="btn mb-3 btn-primary"> Back to Books</a>
+<a href="{{ route('book.index') }}" class="btn mb-3 btn-primary"> Back to Books</a>
 <div class="card mb-3">
     <div class="row">
         <div class="col-6">
-            <img src="{{ asset('/images/'.$book->image) }}" class="card-img-top " alt="{{ $book->title }}">
+            <img src="{{ asset('/images/'.$book->image) }}" class="card-img w-100 " alt="{{ $book->title }}">
         </div>
         <div class="col-6">
             <div class="card-body">

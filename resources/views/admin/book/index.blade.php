@@ -26,7 +26,7 @@ Books Table
 @endpush
 
 @section('content')
-<a href="book/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Book</a>
+<a href="{{ route('book.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Book</a>
 <table id="books" class="table table-bordered">
     <thead>                  
       <tr>
@@ -40,6 +40,11 @@ Books Table
       </tr>
     </thead>
     <tbody>
+      @if(session('success'))
+      <div class="alert alert-success">
+          {{ session('success') }}
+      </div>
+  @endif
         @forelse ($books as $book)
       <tr>
         <td>{{ $loop->iteration }}</td>
@@ -49,9 +54,9 @@ Books Table
         <td><img src="{{ asset('/images/'.$book->image) }}" width="100" alt="{{ $book->title }}"></td>
         <td>{{ $book->stock }}</td>
         <td>
-            <form action="/book/{{ $book->id }}" method="POST">
-                <a href="/book/{{ $book->id }}" class="btn btn-info btn-sm">Detail</a>
-                <a href="/book/{{ $book->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+            <form action="{{ route('book.destroy', $book->id) }}}}" method="POST">
+                <a href="{{ route('book.show',$book->id) }}" class="btn btn-info btn-sm">Detail</a>
+                <a href="{{ route('book.edit', $book->id) }}" class="btn btn-warning btn-sm">Edit</a>
                 @csrf
                 @method("DELETE")
                 <button onclick="return confirm('Delete Book {{ $book->title }}?');" type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -59,9 +64,9 @@ Books Table
         </td>
       </tr>
       @empty
-        <tr>
-          <td colspan="7" class="text-center"><h3>Book is Empty</h3></td>
-        </tr>
+      <tr>
+        <td colspan="5" class="text-center">No Books available</td>
+    </tr>
       @endforelse
     </tbody>
   </table>

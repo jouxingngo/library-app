@@ -7,6 +7,14 @@ Book - Category
 Category List
 @endsection
 @section('content')
+<!-- Pagination -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-end">
+            {{ $categories->links() }}
+        </div>
+    </div>
+</div>
 <div class="row">
     @forelse ($categories as $category)
         <div class="col-md-3 mb-4">
@@ -19,9 +27,18 @@ Category List
             </div>
         </div>
     @empty
-        <div class="col-12">
-            <h3 class="text-center">No Categories Available</h3>
-        </div>
+    <tr>
+        <td colspan="5" class="text-center">No Categories available</td>
+    </tr>
     @endforelse
 </div>
+<!-- Pagination -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-end">
+            {{ $categories->links() }}
+        </div>
+    </div>
+</div>
+
 @endsection
