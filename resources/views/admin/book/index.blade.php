@@ -1,6 +1,6 @@
 @extends('templates.app')
 @section('title')
-Admin - DashBoard
+Admin - Book
 @endsection
 @section('nav-active', 'table')
 @section('head')

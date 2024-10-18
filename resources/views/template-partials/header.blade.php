@@ -19,5 +19,29 @@
     @stack('style')
     <!-- Custom styles for this template-->
     <link href="{{ asset('/templates/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <style>
+        .hover-shadow {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+    
+        .hover-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .img-container {
+        overflow: hidden; /* Menyembunyikan bagian gambar yang lebih besar dari wadah */
+        height: 200px; /* Atur tinggi sesuai kebutuhan */
+    }
+
+    .hover-zoom {
+        transition: transform 0.3s ease; /* Transisi halus */
+        width: 100%; /* Pastikan gambar memenuhi wadah */
+        height: auto; /* Menjaga rasio aspek gambar */
+    }
+
+    .card:hover .hover-zoom {
+        transform: scale(1.2); /* Memperbesar gambar tanpa memperbesar elemen */
+    }
+    </style>
 
 </head>

@@ -56,13 +56,24 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, Request $request)
     {
         $category = Category::with('books')->findOrFail($id);
         
+        // Mengambil nilai pencarian dari input
+        $search = $request->input('search');
     
-        return view('user.category.show', compact('category'));
+        // Memfilter buku yang terkait dengan kategori, dan menerapkan logika pencarian
+        $books = $category->books()
+            ->when($search, function ($query, $search) {
+                return $query->where('title', 'like', "%{$search}%");
+            })
+            ->paginate(15);
+    
+        // Mengembalikan view dengan kategori dan buku yang ditemukan
+        return view('user.category.show', compact('category', 'books', 'search'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.

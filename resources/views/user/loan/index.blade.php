@@ -1,9 +1,7 @@
 @extends('templates.app')
 
 @section('title')
-@foreach ($loans as $loan)
-{{ $loan->user->name }} - Loan
-@endforeach
+Book - Loan
 @endsection
 
 @section('nav-active', 'loan')

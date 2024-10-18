@@ -46,6 +46,7 @@ Route::get('/books', [BookController::class, 'index'])->name('books.index');
 Route::get('/loan_null', function () {
     return view('user.loan.null');
 });
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('category.show');
 
 
 require __DIR__.'/auth.php';

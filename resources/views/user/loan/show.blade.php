@@ -7,14 +7,14 @@ Loan - {{ $loan->book->title }}
 Loan Detail
 @endsection
 @section('content')
-<div class="container">
+<div class="container mb-3">
     <a href="{{ route('loan.index') }}" class="btn btn-primary mb-3">Back to Loans</a>
 
     <div class="card">
         <div class="row">
             <div class="col-md-6">
                     @if($loan->book->image)
-                        <img src="{{ asset('/images/'.$loan->book->image) }}" alt="{{ $loan->book->title }}" class="img-fluid w-75">
+                        <img src="{{ asset('/images/'.$loan->book->image) }}" alt="{{ $loan->book->title }}" class="img-fluid w-100">
                     @endif
             </div>
             <div class="col-md-6">

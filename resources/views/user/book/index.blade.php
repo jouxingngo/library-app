@@ -35,10 +35,12 @@ All Books
 
 <div class="row" id="book-list">
     
-    @foreach($books as $book)
+    @forelse($books as $book)
     <div class="col-md-3 mb-3 book-item">
-        <div class="card shadow-sm">
-            <img src="{{ asset('/images/'.$book->image) }}" class="card-img-top img-fluid w-100" height="100px" alt="{{ $book->title }}">
+        <div class="card hover-shadow shadow-sm ">
+            <div class="card-img img-container">
+            <img src="{{ asset('/images/'.$book->image) }}" class="card-img-top hover-zoom  img-fluid w-100" height="100px" alt="{{ $book->title }}">
+        </div>
             <div class="card-body">
                 <h5 class="card-title text-dark font-weight-bold text-center">{{ $book->title }}</h5>
                 <p class="card-text"><strong>Category:</strong> <a href="/category/{{ $book->category->id }}">{{ $book->category->name }}</a></p>
@@ -48,7 +50,11 @@ All Books
             </div>
         </div>
     </div>
-    @endforeach
+    @empty
+    <div class="col-12">
+        <h3 class="text-center">No Book Available</h3>
+    </div>
+    @endforelse
 </div>
 
 <!-- Pagination -->
