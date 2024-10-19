@@ -1,5 +1,4 @@
 # **Library App**  
-**Live Preview** - [Click Here](https://library-app-live-preview.com)
 
 <br/>  
 <div align="center">  
