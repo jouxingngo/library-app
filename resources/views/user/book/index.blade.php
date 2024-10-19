@@ -43,7 +43,7 @@ All Books
         </div>
             <div class="card-body">
                 <h6 class="card-title text-dark font-weight-bold text-center">{{ $book->title }}</h6>
-                <p class="card-text mb-1"><strong>Category:</strong> <a href="{{ route('category.index',$book->category->id)}}">{{ $book->category->name }}</a></p>
+                <p class="card-text mb-1"><strong>Category:</strong> <a href="{{ route('category.show',$book->category->id)}}">{{ $book->category->name }}</a></p>
                 <p class="card-text mb-1"><strong>Author:</strong> {{ $book->author }}</p>
                 <p class="card-text mb-1"><strong>Status:</strong> {{ $book->status ? "Available" : "Unavailable" }}</p>
                 <a href="{{ route('book.show', $book->id) }}" class="btn btn-info">View</a>
