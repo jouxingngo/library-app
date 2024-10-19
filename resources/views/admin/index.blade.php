@@ -4,7 +4,7 @@ Admin - DashBoard
 @endsection
 @section('nav-active', 'admin')
 @section('head')
-Welcome Admin
+Dashboard
 @endsection
 @section('content')
 
