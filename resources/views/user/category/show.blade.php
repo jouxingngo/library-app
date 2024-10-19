@@ -32,8 +32,10 @@ Category - {{ $category->name }}
     </div>
 @forelse ($books as $book)
 <div class="col-md-3 mb-3">
-    <div class="card">
-        <img src="{{ asset('/images/' . $book->image) }}" class="card-img-top" alt="{{ $book->title }}">
+    <div class="card hover-shadow">
+        <div class="card-img img-container">
+            <img src="{{ asset('/images/' . $book->image) }}" class="card-img-top" alt="{{ $book->title }}">
+        </div>
         <div class="card-body">
             <h5 class="card-title text-center text-dark font-weight-bold">{{ $book->title }}</h5>
             <p class="card-text"><strong>Author:</strong> {{ $book->author }}</p>
