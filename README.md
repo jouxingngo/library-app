@@ -36,11 +36,7 @@ Untuk menjalankan aplikasi ini, silakan ikuti langkah-langkah di bawah ini:
    ```bash
    php artisan db:seed --class=RolePermissionSeeder
    php artisan db:seed --class=UserSeeder
-5. **Seeding Database**:
-   ```bash
-   git clone https://github.com/jouxingngo/library-app.git
-   cd library-app
-6. **Login Admin**:
+5. **Login Admin**:
    **Email**: admin@example.com
    **Password**: password
 
