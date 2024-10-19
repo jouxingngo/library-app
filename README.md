@@ -1,8 +1,8 @@
 # **Library App**  
-
+Live Preview - [Click Here](https://library-app.jouxingngo.my.id/)
 <br/>  
 <div align="center">  
-  <img alt="Demo" src="public/imgs/preview.png" />  
+  <img width="100px" alt="Demo" src="public/imgs/preview.png" />  
 </div>  
 <br/>  
 <br/>
