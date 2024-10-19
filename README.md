@@ -1,49 +1,64 @@
-Library App
-Live Preview - Click Here
+# **Library App**  
+**Live Preview** - [Click Here](https://library-app-live-preview.com)
 
-<br/> <div align="center"> <img alt="Demo" src="public/mockup.png" /> </div> <br/> <br/>
-🛠 Installation and Setup Instructions
-Fork dan clone repository ini. Anda membutuhkan NodeJs, Composer, dan Git di mesin Anda.
+<br/>  
+<div align="center">  
+  <img alt="Demo" src="public/mockup.png" />  
+</div>  
+<br/>  
+<br/>
 
-Install dependensi: composer install && npm install
+## 🛠 **Installation and Setup Instructions**
 
-Di direktori proyek, jalankan: npm run dev
-Aplikasi akan berjalan dalam mode pengembangan.
-Buka http://localhost:8000 untuk melihatnya di browser.
+1. **Fork dan clone** repository ini. Pastikan Anda telah menginstal **NodeJs**, **Composer**, dan **Git** di mesin Anda.
+   
+2. Install dependensi:  
+   ```bash  
+   composer install && npm install
+   
+3. Di direktori proyek, jalankan:  
+   ```bash  
+   php artisan serve
+   npm run dev
+   
+4. Migrasi database: 
+   ```bash  
+   php artisan migrate
 
-Jalankan migrasi database: php artisan migrate
+5. Migrasi database: 
+   ```bash  
+   php artisan db:seed --class=RolePermissionSeeder  
+   php artisan db:seed --class=UserSeeder
 
-Jalankan seeding database untuk peran, izin, dan pengguna:
 
-bash
-Copy code
-php artisan db:seed --class=RolePermissionSeeder
-php artisan db:seed --class=UserSeeder
-Usage Instructions
-Login ke halaman admin menggunakan kredensial berikut:
+## 🚀 **Usage Instructions**
 
-Email: admin@example.com
-Password: password
-Kelola buku, kategori, dan peminjaman dengan mudah melalui dashboard admin.
+1. **Login ke halaman admin** menggunakan kredensial berikut:  
+   - **Email**: `admin@example.com`  
+   - **Password**: `password`
 
-Deploy with Github Pages
-Ubah nama repository fork menjadi <your-github-username>.github.io.
+2. Setelah berhasil login, Anda dapat mengelola berbagai fitur dengan mudah melalui **dashboard admin**:  
+   - **Buku**: Tambahkan, edit, atau hapus buku di perpustakaan.
+   - **Kategori Buku**: Kelola kategori untuk mengorganisir buku dengan lebih baik.
+   - **Peminjaman Buku**: Atur peminjaman buku oleh pengguna.
 
-Edit properti homepage di file package.json dengan format berikut:
+Semua fitur ini dapat diakses melalui dashboard yang **ramah pengguna** dan **mudah digunakan**.
 
-json
-Copy code
-"homepage": "http://<your-github-username>.github.io/"
-Deploy aplikasi dengan perintah:
+---
 
-bash
-Copy code
-npm run deploy
-Contribute
-Pull Requests sangat diterima :)
+## 🤝 **Contribute**
 
-Hubungi Saya
-Jika Anda memiliki pertanyaan atau umpan balik, jangan ragu untuk menghubungi saya di Instagram: @jouxingngo.
+Pull Requests sangat diterima! Jika Anda memiliki ide atau ingin melakukan peningkatan untuk aplikasi ini, jangan ragu untuk mengirimkan. Kontribusi Anda sangat dihargai. 😊
 
-Show your support
-Berikan ⭐ jika Anda menyukai aplikasi ini!
+---
+
+## 📞 **Hubungi Saya**
+
+Jika Anda memiliki pertanyaan atau umpan balik, silakan hubungi saya di **Instagram**: [@jouxingngo](https://instagram.com/jouxing_ngo).
+
+---
+
+## ⭐ **Show your support**
+
+Jika Anda menyukai aplikasi ini, jangan lupa untuk memberikan **⭐**! Dukungan Anda sangat berarti bagi pengembangan proyek ini.
+
