@@ -52,7 +52,7 @@ Pull Requests sangat diterima! Jika Anda memiliki ide atau ingin melakukan penin
 
 ---
 
-## 📞 **Hubungi Saya**
+## 📞 **Contact Me**
 
 Jika Anda memiliki pertanyaan atau umpan balik, silakan hubungi saya di **Instagram**: [@jouxing_ngo](https://instagram.com/jouxing_ngo).
 
