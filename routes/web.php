@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoanController;
@@ -32,9 +33,7 @@ Route::get("/", [BookController::class, 'index']);
 
 
 Route::middleware(['role:admin', 'auth'])->group(function () {
-    Route::get('admin', function () {
-        return view("admin.index");
-    });
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
     Route::resource('user', UserController::class);
     Route::post('/loan/{loan}/return', [LoanController::class, 'return'])->name('loan.return');
 });

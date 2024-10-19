@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('/templates/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <style>
+        
         .hover-shadow {
             transition: transform 0.2s, box-shadow 0.2s;
         }

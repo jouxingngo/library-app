@@ -68,7 +68,7 @@ class CategoryController extends Controller
             ->when($search, function ($query, $search) {
                 return $query->where('title', 'like', "%{$search}%");
             })
-            ->paginate(15);
+            ->paginate(10);
     
         // Mengembalikan view dengan kategori dan buku yang ditemukan
         return view('user.category.show', compact('category', 'books', 'search'));

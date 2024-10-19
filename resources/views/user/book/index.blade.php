@@ -1,7 +1,7 @@
 @extends('templates.app')
 
 @section('title')
-Book
+{{ config('app.name') }} - Book
 @endsection
 
 @section('nav-active', 'book')
@@ -42,10 +42,10 @@ All Books
             <img src="{{ asset('/images/'.$book->image) }}" class="card-img-top hover-zoom  img-fluid w-100" height="100px" alt="{{ $book->title }}">
         </div>
             <div class="card-body">
-                <h5 class="card-title text-dark font-weight-bold text-center">{{ $book->title }}</h5>
-                <p class="card-text"><strong>Category:</strong> <a href="/category/{{ $book->category->id }}">{{ $book->category->name }}</a></p>
-                <p class="card-text"><strong>Author:</strong> {{ $book->author }}</p>
-                <p class="card-text"><strong>Status:</strong> {{ $book->status ? "Available" : "Unavailable" }}</p>
+                <h6 class="card-title text-dark font-weight-bold text-center">{{ $book->title }}</h6>
+                <p class="card-text mb-1"><strong>Category:</strong> <a href="{{ route('category.index',$book->category->id)}}">{{ $book->category->name }}</a></p>
+                <p class="card-text mb-1"><strong>Author:</strong> {{ $book->author }}</p>
+                <p class="card-text mb-1"><strong>Status:</strong> {{ $book->status ? "Available" : "Unavailable" }}</p>
                 <a href="{{ route('book.show', $book->id) }}" class="btn btn-info">View</a>
             </div>
         </div>

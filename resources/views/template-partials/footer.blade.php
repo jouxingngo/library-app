@@ -2,7 +2,11 @@
  <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Create By jouxingngo</span>
+            <span class="text-muted">
+                Copyright &copy; Create By 
+                <a href="https://instagram.com/jouxing_ngo" class="text-primary" target="_blank">jouxingngo</a>
+            </span>
+            
         </div>
     </div>
 </footer>

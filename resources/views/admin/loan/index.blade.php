@@ -54,9 +54,10 @@ Loans Table
         @endif
         @forelse ($loans as $loan )
         <tr>
-          <td>{{ $loop->iteration }}</td>
-          <td>{{ $loan->user->name }}</td>
-          <td>{{ $loan->book->title }}</td>
+
+          <td>{{ $loop->iteration}}</td>
+          <td>{{ $loan->user->name ?? "User has been deleted"}}</td>
+          <td>{{ $loan->book->title ?? "Book has been Deleted" }}</td>
           <td>{{ $loan->loan_date }}</td>
             <td>
               @if(is_null($loan->return_date))

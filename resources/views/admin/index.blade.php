@@ -22,6 +22,7 @@ Welcome Admin
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Books</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">Manage Books</div>
+                            <p class="lead ">Total: {{ $bookCount }}</p>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-book fa-2x text-gray-300"></i>
@@ -41,6 +42,8 @@ Welcome Admin
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Categories</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">Manage Categories</div>
+                            <p class="lead ">Total: {{ $categoryCount }}</p>
+
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-tags fa-2x text-gray-300"></i>
@@ -59,6 +62,8 @@ Welcome Admin
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Users</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">Manage Users</div>
+                            <p class="lead ">Total: {{ $userCount }}</p>
+
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -78,6 +83,9 @@ Welcome Admin
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Loans</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">Manage Loans</div>
+                            <p class=" mb-1">Total: {{ $totalLoanCount }}</p>
+                            <p class="lead ">Active: {{ $loanCount }}</p>
+
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-book-open fa-2x text-gray-300"></i>

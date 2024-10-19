@@ -29,10 +29,10 @@ class LoanController extends Controller
         }
     
         if (auth()->user()->hasRole('admin')) {
-            $loans = Loan::with(['user', 'book'])->get();
+            $loans = Loan::latest()->with(['user', 'book'])->get();
             return view('admin.loan.index', compact('loans'));
         } else {
-            $loans = Loan::where('user_id', auth()->id())->with(['user', 'book'])->get();
+            $loans = Loan::latest()->where('user_id', auth()->id())->with(['user', 'book'])->get();
             return view('user.loan.index', compact('loans'));
         }
     }

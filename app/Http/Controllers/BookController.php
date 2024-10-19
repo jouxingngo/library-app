@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Str;
 
 class BookController extends Controller
 {
@@ -20,21 +21,23 @@ class BookController extends Controller
     }
     public function index(Request $request)
     {
-        $search = $request->get('search'); 
-    
-        $books = Book::with('category')
-            ->when($search, function ($query, $search) {
-                return $query->where('title', 'like', "%{$search}%")
-                             ->orWhereHas('category', function ($query) use ($search) {
-                                 $query->where('name', 'like', "%{$search}%");
-                             });
-            })
-            ->paginate(15);
+      
     
         // Memeriksa otentikasi pengguna
         if (auth()->check() && auth()->user()->hasRole('admin')) {
-            return view('admin.book.index', compact('books', 'search')); 
+            $books = Book::with('category')->get();
+            return view('admin.book.index', compact('books')); 
         } else {
+            $search = $request->get('search'); 
+    
+            $books = Book::with('category')
+                ->when($search, function ($query, $search) {
+                    return $query->where('title', 'like', "%{$search}%")
+                                 ->orWhereHas('category', function ($query) use ($search) {
+                                     $query->where('name', 'like', "%{$search}%");
+                                 });
+                })
+                ->paginate(8);
             return view('user.book.index', compact('books', 'search')); 
         }
     }

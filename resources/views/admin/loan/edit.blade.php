@@ -3,6 +3,23 @@
 Edit Loan
 @endsection
 @section('nav-active', 'table')
+@push('style')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+@endpush
+@push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('select').select2({
+            placeholder: '--Select--',
+            allowClear: true
+        });
+    });
+</script>
+
+@endpush
 @section('head')
 Edit Loan
 @endsection
