@@ -36,9 +36,10 @@ Untuk menjalankan aplikasi ini, silakan ikuti langkah-langkah di bawah ini:
    ```bash
    php artisan db:seed --class=RolePermissionSeeder
    php artisan db:seed --class=UserSeeder
-5. **Login Admin**:
-   **Email**: admin@example.com
-   **Password**: password
+5. **Login ke Halaman Admin**:
+    Anda dapat login ke halaman admin menggunakan kredensial berikut:
+    - **Email**: `admin@example.com`
+    - **Password**: `password`
 
 ## Kontak
 Terima kasih telah mengunjungi proyek ini! Jika Anda memiliki pertanyaan atau umpan balik, jangan ragu untuk menghubungi saya di Instagram: [@jouxingngo](https://instagram.com/jouxing_ngo).
