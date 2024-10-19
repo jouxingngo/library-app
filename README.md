@@ -1,45 +1,49 @@
-# Library App
+Library App
+Live Preview - Click Here
 
-Selamat datang di proyek **Library App**! Aplikasi ini dibangun menggunakan **Laravel** dan dirancang untuk membantu pengelolaan perpustakaan. Aplikasi ini memungkinkan pengguna untuk meminjam buku, mengelola kategori buku, dan mengelola pengguna dalam sistem.
+<br/> <div align="center"> <img alt="Demo" src="public/mockup.png" /> </div> <br/> <br/>
+🛠 Installation and Setup Instructions
+Fork dan clone repository ini. Anda membutuhkan NodeJs, Composer, dan Git di mesin Anda.
 
-## Teknologi yang Digunakan
+Install dependensi: composer install && npm install
 
-- **Laravel**: Framework PHP yang elegan dan kuat.
-- **Spatie Role & Permission**: Untuk manajemen peran dan izin pengguna.
-- **Laravel Breeze**: Untuk sistem autentikasi sederhana.
-- **Bootstrap 4**: Untuk styling yang responsif dan modern.
+Di direktori proyek, jalankan: npm run dev
+Aplikasi akan berjalan dalam mode pengembangan.
+Buka http://localhost:8000 untuk melihatnya di browser.
 
-## Fitur Utama
+Jalankan migrasi database: php artisan migrate
 
-- **Dashboard Admin**: Melihat statistik pengguna, buku, kategori, dan peminjaman.
-- **Manajemen Buku**: Menambahkan, mengedit, dan menghapus buku.
-- **Manajemen Kategori**: Mengelola kategori buku.
-- **Sistem Peminjaman**: Pengguna dapat meminjam buku dengan mudah.
+Jalankan seeding database untuk peran, izin, dan pengguna:
 
-## Cara Menjalankan
+bash
+Copy code
+php artisan db:seed --class=RolePermissionSeeder
+php artisan db:seed --class=UserSeeder
+Usage Instructions
+Login ke halaman admin menggunakan kredensial berikut:
 
-Untuk menjalankan aplikasi ini, silakan ikuti langkah-langkah di bawah ini:
+Email: admin@example.com
+Password: password
+Kelola buku, kategori, dan peminjaman dengan mudah melalui dashboard admin.
 
-1. **Clone Repository**:
-   ```bash
-   git clone https://github.com/jouxingngo/library-app.git
-   cd library-app
-2. **Instalasi Dependensi**:
-   ```bash
-   composer install
-   npm install
-   npm run dev
-3. **Migrasi Database**:
-   ```bash
-   php artisan migrate
-4. **Seeding Database**:
-   ```bash
-   php artisan db:seed --class=RolePermissionSeeder
-   php artisan db:seed --class=UserSeeder
-5. **Login ke Halaman Admin**:
-    Anda dapat login ke halaman admin menggunakan kredensial berikut:
-    - **Email**: `admin@example.com`
-    - **Password**: `password`
+Deploy with Github Pages
+Ubah nama repository fork menjadi <your-github-username>.github.io.
 
-## Kontak
-Terima kasih telah mengunjungi proyek ini! Jika Anda memiliki pertanyaan atau umpan balik, jangan ragu untuk menghubungi saya di Instagram: [@jouxingngo](https://instagram.com/jouxing_ngo).
+Edit properti homepage di file package.json dengan format berikut:
+
+json
+Copy code
+"homepage": "http://<your-github-username>.github.io/"
+Deploy aplikasi dengan perintah:
+
+bash
+Copy code
+npm run deploy
+Contribute
+Pull Requests sangat diterima :)
+
+Hubungi Saya
+Jika Anda memiliki pertanyaan atau umpan balik, jangan ragu untuk menghubungi saya di Instagram: @jouxingngo.
+
+Show your support
+Berikan ⭐ jika Anda menyukai aplikasi ini!
