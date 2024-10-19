@@ -40,6 +40,7 @@
 2. Setelah berhasil login, Anda dapat mengelola berbagai fitur dengan mudah melalui **dashboard admin**:  
    - **Buku**: Tambahkan, edit, atau hapus buku di perpustakaan.
    - **Kategori Buku**: Kelola kategori untuk mengorganisir buku dengan lebih baik.
+  - **User**: Tambah, edit, hapus, dan kelola data pengguna.
    - **Peminjaman Buku**: Atur peminjaman buku oleh pengguna.
 
 Semua fitur ini dapat diakses melalui dashboard yang **ramah pengguna** dan **mudah digunakan**.
@@ -54,7 +55,7 @@ Pull Requests sangat diterima! Jika Anda memiliki ide atau ingin melakukan penin
 
 ## 📞 **Hubungi Saya**
 
-Jika Anda memiliki pertanyaan atau umpan balik, silakan hubungi saya di **Instagram**: [@jouxingngo](https://instagram.com/jouxing_ngo).
+Jika Anda memiliki pertanyaan atau umpan balik, silakan hubungi saya di **Instagram**: [@jouxing_ngo](https://instagram.com/jouxing_ngo).
 
 ---
 
