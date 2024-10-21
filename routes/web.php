@@ -48,4 +48,4 @@ Route::get('/loan_null', function () {
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('category.show');
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
