@@ -27,27 +27,27 @@ User
             <label>Email</label>
             <input type="email" name="email" class="form-control" >
         </div>
-  <!-- Password -->
-<div class="form-group mt-4">
-    <label for="password">{{ __('Password') }}</label>
-    <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
-    @if($errors->has('password'))
-        <div class="text-danger mt-2">
-            {{ $errors->first('password') }}
-        </div>
-    @endif
-</div>
+    <!-- Password -->
+    <div class="form-group mt-4">
+        <label for="password">{{ __('Password') }}</label>
+        <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
+        @if($errors->has('password'))
+            <div class="text-danger mt-2">
+                {{ $errors->first('password') }}
+            </div>
+        @endif
+    </div>
 
-<!-- Confirm Password -->
-<div class="form-group mt-4">
-    <label for="password_confirmation">{{ __('Confirm Password') }}</label>
-    <input id="password_confirmation" type="text" class="form-control" name="password_confirmation" required autocomplete="new-password">
-    @if($errors->has('password_confirmation'))
-        <div class="text-danger mt-2">
-            {{ $errors->first('password_confirmation') }}
-        </div>
-    @endif
-</div>
+    <!-- Confirm Password -->
+    <div class="form-group mt-4">
+        <label for="password_confirmation">{{ __('Confirm Password') }}</label>
+        <input id="password_confirmation" type="text" class="form-control" name="password_confirmation" required autocomplete="new-password">
+        @if($errors->has('password_confirmation'))
+            <div class="text-danger mt-2">
+                {{ $errors->first('password_confirmation') }}
+            </div>
+        @endif
+    </div>
 
         <div class="form-group">
             <label>Phone</label>
